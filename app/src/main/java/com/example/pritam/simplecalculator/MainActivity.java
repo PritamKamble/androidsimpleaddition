@@ -1,5 +1,6 @@
 package com.example.pritam.simplecalculator;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -29,8 +30,9 @@ public class MainActivity extends AppCompatActivity {
                 int n1=Integer.parseInt(num1.getText().toString());
                 int n2=Integer.parseInt(num2.getText().toString());
                 String ans=Integer.toString(n1+n2);
-
                 setans.setText(ans);
+                Intent i=new Intent(MainActivity.this,resultActivity.class);
+                i.putExtra("result",ans);
             }
         });
 
