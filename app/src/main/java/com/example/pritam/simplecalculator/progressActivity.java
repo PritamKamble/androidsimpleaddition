@@ -1,5 +1,6 @@
 package com.example.pritam.simplecalculator;
 
+import android.content.Intent;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -19,7 +20,7 @@ public class progressActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_progress);
 
         pbcircle=findViewById(R.id.progressBar3);
         pbhorizontal=findViewById(R.id.progressBar1);
@@ -33,6 +34,15 @@ public class progressActivity extends AppCompatActivity {
             public void run() {
                 while (progressStatus < 100) {
                     progressStatus += 1;
+                    if(progressStatus==99)
+                    {
+                        Intent i = new Intent(progressActivity.this, resultActivity.class);
+
+                        String s1=getIntent().getStringExtra("result");
+
+                        i.putExtra("result",s1);
+                        startActivity(i);
+                    }
                     {
                         handler.post(new Runnable() {
                             public void run() {

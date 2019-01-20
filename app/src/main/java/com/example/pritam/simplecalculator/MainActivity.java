@@ -8,7 +8,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-public class MainActivity extends AppCompatActivity  implements View.OnClickListener {
+public class MainActivity extends AppCompatActivity{
 
     EditText num1,num2;
     Button addition,btn;
@@ -22,12 +22,10 @@ public class MainActivity extends AppCompatActivity  implements View.OnClickList
         num2 = findViewById(R.id.no2);
         addition=findViewById(R.id.add);
         setans = findViewById(R.id.ans);
-        btn = findViewById(R.id.button);
 
-        addition.setOnClickListener(this);
-        btn.setOnClickListener(this);
 
-        /*addition.setOnClickListener(new View.OnClickListener() {
+
+        addition.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
@@ -36,26 +34,27 @@ public class MainActivity extends AppCompatActivity  implements View.OnClickList
                 int ans1=n1+n2;
                 String ans=Integer.toString(ans1);
                 setans.setText(ans);
-                Intent i=new Intent(MainActivity.this,resultActivity.class);
-                i.putExtra("result",ans);
+                Intent i = new Intent(MainActivity.this, progressActivity.class);
+                i.putExtra("result", ans);
                 startActivity(i);
             }
-        });*/
+        });
 
 
 
     }
+    /*
     public void onClick(View v) {
 
-        if (v.getId()==R.id.button||v.getId()==R.id.add) {
+        if (v.getId()==R.id.add) {
             int n1 = Integer.parseInt(num1.getText().toString());
             int n2 = Integer.parseInt(num2.getText().toString());
             int ans1 = n1 + n2;
             String ans = Integer.toString(ans1);
             setans.setText(ans);
-            Intent i = new Intent(MainActivity.this, resultActivity.class);
+            Intent i = new Intent(MainActivity.this, progressActivity.class);
             i.putExtra("result", ans);
             startActivity(i);
         }
-    }
+    }*/
 }
